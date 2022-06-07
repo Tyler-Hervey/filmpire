@@ -1,6 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./components/App.jsx";
+import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-import App from './components/app.jsx'
+const root = createRoot(document.getElementById("root"));
+const theme = createTheme();
 
-ReactDOM.render(<App/>, document.getElementById('root'))
+root.render(
+    <ThemeProvider theme={theme} >
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </ThemeProvider>
+);
